@@ -1,7 +1,0 @@
-ru\ivmiit\alfia\servlets\DataProduct.class
-ru\ivmiit\alfia\repository\ProductRepository.class
-ru\ivmiit\alfia\config\DaoConfig.class
-ru\ivmiit\alfia\repository\ProductRepositoryJDBCImpl.class
-ru\ivmiit\alfia\model\Product.class
-ru\ivmiit\alfia\repository\ProductRepositoryInMemoryImpl.class
-ru\ivmiit\alfia\fakeDataBase\ProductStorage.class
