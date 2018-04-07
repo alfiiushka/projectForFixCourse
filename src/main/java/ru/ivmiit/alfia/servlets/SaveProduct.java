@@ -14,16 +14,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("/data-product")
-public class DataProduct extends HttpServlet{
+@WebServlet("/save-product")
+public class SaveProduct extends HttpServlet{
 
     private ProductRepository productRepository;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Product> productList = productRepository.getAllProducts();
-        req.setAttribute("productsFromServer", productList);
-        req.getServletContext().getRequestDispatcher("/jsp/getProducts.jsp").forward(req, resp);
+        req.getServletContext().getRequestDispatcher("/jsp/saveProducts.jsp").forward(req, resp);
     }
 
     @Override

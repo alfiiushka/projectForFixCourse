@@ -9,13 +9,7 @@
 </head>
 <body>
     <div class="form-style-6">
-        <form method="post" action="data-product">
-            <input  type="text" placeholder="name" name="name"><br>
-            <input  type="submit" value="Add product">
-        </form>
-    </div>
-    <div class="form-style-6">
-        <h1>Список продуктов</h1>
+        <h1>Products list</h1>
         <table>
             <tr>
                 <th>Product name</th>
@@ -27,6 +21,8 @@
                 </tr>
             </c:forEach>
         </table>
+        <a href="/save-product">Go to adding products</a>
+        <a href="/signIn">Exit</a>
     </div>
 
 </body>
