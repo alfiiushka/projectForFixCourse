@@ -1,3 +1,5 @@
+package ru.ivmiit.alfia.model;
+
 public class Product {
     private String name;
 
