@@ -1,4 +1,4 @@
-package ru.ivmiit.alfia.repository;
+package ru.ivmiit.alfia.dao;
 
 import ru.ivmiit.alfia.config.DaoConfig;
 import ru.ivmiit.alfia.model.StoreUser;
@@ -9,9 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
-public class UserRepositoryJDBCImpl implements UserRepository {
+public class StoreUserDaoJDBCImpl implements StoreUserDao {
 
     private DaoConfig daoConfig = new DaoConfig();
 

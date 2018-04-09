@@ -1,7 +1,17 @@
 package ru.ivmiit.alfia.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "store_user")
 public class StoreUser {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "login")
     private String login;
+    @Column(name = "password")
     private String password;
 
     public StoreUser() {

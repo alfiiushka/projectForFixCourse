@@ -1,12 +1,8 @@
-package ru.ivmiit.alfia.repository;
+package ru.ivmiit.alfia.dao;
 
 import ru.ivmiit.alfia.model.StoreUser;
 
-import java.util.List;
-
-public interface UserRepository {
-
-    void save(StoreUser user);
+public interface StoreUserDao extends AbstractDao<StoreUser> {
 
     boolean isExist(String login, String password);
 

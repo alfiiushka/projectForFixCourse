@@ -1,9 +1,7 @@
 package ru.ivmiit.alfia.servlets;
 
-import org.mindrot.jbcrypt.BCrypt;
-import ru.ivmiit.alfia.repository.UserRepository;
-import ru.ivmiit.alfia.repository.UserRepositoryJDBCImpl;
-import ru.ivmiit.alfia.security.SecurityService;
+import ru.ivmiit.alfia.dao.StoreUserDao;
+import ru.ivmiit.alfia.dao.StoreUserDaoJDBCImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,28 +14,28 @@ import java.io.IOException;
 @WebServlet("/signIn")
 public class SignIn extends HttpServlet {
 
-    private UserRepository userRepository;
+    private StoreUserDao storeUserDao;
 
     @Override
     public void init() throws ServletException {
-        userRepository=new UserRepositoryJDBCImpl();
+        storeUserDao = new StoreUserDaoJDBCImpl();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getServletContext().getRequestDispatcher("/jsp/signIn.jsp").forward(req,resp);
+        req.getServletContext().getRequestDispatcher("/jsp/signIn.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String login=req.getParameter("login");
-        String password=req.getParameter("password");
-        if(userRepository.isExist(login, password)){
-            HttpSession session=req.getSession();
+        String login = req.getParameter("login");
+        String password = req.getParameter("password");
+        if (storeUserDao.isExist(login, password)) {
+            HttpSession session = req.getSession();
             session.setAttribute("user", login);
-            resp.sendRedirect(req.getContextPath()+"/get-products");
-        }else
-            resp.sendRedirect(req.getContextPath()+"/signIn");
+            resp.sendRedirect(req.getContextPath() + "/get-products");
+        } else
+            resp.sendRedirect(req.getContextPath() + "/signIn");
 
     }
 
