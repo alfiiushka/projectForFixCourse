@@ -1,6 +1,6 @@
-package ru.ivmiit.alfia.fakeDataBase;
+package ru.ivmiit.projectFixCource.fakeDataBase;
 
-import ru.ivmiit.alfia.model.Product;
+import ru.ivmiit.projectFixCource.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;

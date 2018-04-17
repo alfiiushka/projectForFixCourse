@@ -1,13 +1,14 @@
-package ru.ivmiit.alfia.dao;
+package ru.ivmiit.projectFixCource.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.transaction.annotation.Transactional;
-import ru.ivmiit.alfia.config.DaoConfig;
-import ru.ivmiit.alfia.model.StoreUser;
-import ru.ivmiit.alfia.security.SecurityService;
+import ru.ivmiit.projectFixCource.config.DaoConfig;
+import ru.ivmiit.projectFixCource.model.StoreUser;
+import ru.ivmiit.projectFixCource.security.SecurityService;
+import ru.ivmiit.projectFixCource.security.SecurityServiceImpl;
 
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -18,15 +19,17 @@ import java.io.IOException;
 public class StoreUserDaoHibernateImpl implements StoreUserDao {
 
     private DaoConfig daoConfig;
+    private SecurityService securityService;
 
     public StoreUserDaoHibernateImpl() {
         daoConfig = new DaoConfig();
+        securityService=new SecurityServiceImpl();
     }
 
     @Override
     public boolean isExist(String login, String password) {
         StoreUser user = findbylogin(login);
-        return user != null && SecurityService.checkPassword(password, user.getPassword());
+        return user != null && securityService.checkPassword(password, user.getPassword());
     }
 
     @Override

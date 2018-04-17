@@ -1,6 +1,6 @@
-package ru.ivmiit.alfia.dao;
+package ru.ivmiit.projectFixCource.dao;
 
-import ru.ivmiit.alfia.model.Product;
+import ru.ivmiit.projectFixCource.model.Product;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package ru.ivmiit.alfia.servlets;
+package ru.ivmiit.projectFixCource.servlets;
 
-import ru.ivmiit.alfia.dao.StoreUserDaoHibernateImpl;
-import ru.ivmiit.alfia.model.StoreUser;
-import ru.ivmiit.alfia.dao.StoreUserDao;
-import ru.ivmiit.alfia.security.SecurityService;
+import ru.ivmiit.projectFixCource.model.StoreUser;
+import ru.ivmiit.projectFixCource.dao.StoreUserDao;
+import ru.ivmiit.projectFixCource.security.SecurityService;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,19 +14,15 @@ import java.io.IOException;
 
 @WebServlet("/signUp")
 public class SignUp extends HttpServlet {
-    private StoreUserDao storeUserDao;
-
-    @Override
-    public void init() {
-        storeUserDao = new StoreUserDaoHibernateImpl();
-    }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext context=getServletContext();
+        StoreUserDao storeUserDao=(StoreUserDao)context.getAttribute("storeUserDaoHibernate");
+        SecurityService securityService=(SecurityService) context.getAttribute("securityService");
         String login = req.getParameter("login");
         String password = req.getParameter("password");
         if (storeUserDao.findbylogin(login) == null) {
-            StoreUser user = new StoreUser(login, SecurityService.hashPassword(password));
+            StoreUser user = new StoreUser(login, securityService.hashPassword(password));
             storeUserDao.save(user);
             req.getServletContext().getRequestDispatcher("/jsp/signIn.jsp").forward(req, resp);
         } else {

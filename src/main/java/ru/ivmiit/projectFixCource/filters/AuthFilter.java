@@ -1,4 +1,4 @@
-package ru.ivmiit.alfia.filters;
+package ru.ivmiit.projectFixCource.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

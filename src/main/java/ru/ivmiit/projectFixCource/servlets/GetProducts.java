@@ -1,9 +1,10 @@
-package ru.ivmiit.alfia.servlets;
+package ru.ivmiit.projectFixCource.servlets;
 
-import ru.ivmiit.alfia.model.Product;
-import ru.ivmiit.alfia.dao.ProductDao;
-import ru.ivmiit.alfia.dao.ProductDaoJdbcTemplateImpl;
+import ru.ivmiit.projectFixCource.model.Product;
+import ru.ivmiit.projectFixCource.dao.ProductDao;
+import ru.ivmiit.projectFixCource.dao.ProductDaoJdbcTemplateImpl;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,15 +16,10 @@ import java.util.List;
 @WebServlet("/get-products")
 public class GetProducts extends HttpServlet {
 
-    private ProductDao productDao;
-
-    @Override
-    public void init() {
-        productDao = new ProductDaoJdbcTemplateImpl();
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext context = getServletContext();
+        ProductDao productDao = (ProductDao) context.getAttribute("productDao");
         List<Product> productList = productDao.getAllProducts();
         req.setAttribute("productsFromServer", productList);
         req.getServletContext().getRequestDispatcher("/jsp/getProducts.jsp").forward(req, resp);

@@ -1,8 +1,8 @@
-package ru.ivmiit.alfia.config;
+package ru.ivmiit.projectFixCource.config;
 
 import org.hibernate.cfg.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import ru.ivmiit.alfia.model.StoreUser;
+import ru.ivmiit.projectFixCource.model.StoreUser;
 
 import javax.sql.DataSource;
 import java.io.IOException;

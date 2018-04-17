@@ -1,8 +1,8 @@
-package ru.ivmiit.alfia.servlets;
+package ru.ivmiit.projectFixCource.servlets;
 
-import ru.ivmiit.alfia.dao.StoreUserDao;
-import ru.ivmiit.alfia.dao.StoreUserDaoJDBCImpl;
+import ru.ivmiit.projectFixCource.dao.StoreUserDao;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,14 +13,6 @@ import java.io.IOException;
 
 @WebServlet("/signIn")
 public class SignIn extends HttpServlet {
-
-    private StoreUserDao storeUserDao;
-
-    @Override
-    public void init() throws ServletException {
-        storeUserDao = new StoreUserDaoJDBCImpl();
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getServletContext().getRequestDispatcher("/jsp/signIn.jsp").forward(req, resp);
@@ -28,6 +20,8 @@ public class SignIn extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext context = getServletContext();
+        StoreUserDao storeUserDao = (StoreUserDao) context.getAttribute("storeUserDaoJdbc");
         String login = req.getParameter("login");
         String password = req.getParameter("password");
         if (storeUserDao.isExist(login, password)) {
@@ -36,8 +30,6 @@ public class SignIn extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/get-products");
         } else
             resp.sendRedirect(req.getContextPath() + "/signIn");
-
     }
-
 
 }

@@ -1,9 +1,9 @@
-package ru.ivmiit.alfia.servlets;
+package ru.ivmiit.projectFixCource.servlets;
 
-import ru.ivmiit.alfia.model.Product;
-import ru.ivmiit.alfia.dao.ProductDao;
-import ru.ivmiit.alfia.dao.ProductDaoJdbcTemplateImpl;
+import ru.ivmiit.projectFixCource.model.Product;
+import ru.ivmiit.projectFixCource.dao.ProductDao;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +14,6 @@ import java.io.IOException;
 @WebServlet("/save-product")
 public class SaveProduct extends HttpServlet {
 
-    private ProductDao productDao;
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getServletContext().getRequestDispatcher("/jsp/saveProducts.jsp").forward(req, resp);
@@ -23,12 +21,9 @@ public class SaveProduct extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ServletContext context = getServletContext();
+        ProductDao productDao = (ProductDao) context.getAttribute("productDao");
         productDao.save(new Product(request.getParameter("name")));
         doGet(request, response);
-    }
-
-    @Override
-    public void init() throws ServletException {
-        productDao = new ProductDaoJdbcTemplateImpl();
     }
 }

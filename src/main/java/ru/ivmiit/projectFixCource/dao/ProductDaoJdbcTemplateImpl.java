@@ -1,9 +1,9 @@
-package ru.ivmiit.alfia.dao;
+package ru.ivmiit.projectFixCource.dao;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import ru.ivmiit.alfia.config.DaoConfig;
-import ru.ivmiit.alfia.model.Product;
+import ru.ivmiit.projectFixCource.config.DaoConfig;
+import ru.ivmiit.projectFixCource.model.Product;
 
 import java.io.IOException;
 import java.sql.*;

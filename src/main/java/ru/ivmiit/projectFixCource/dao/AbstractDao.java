@@ -1,4 +1,4 @@
-package ru.ivmiit.alfia.dao;
+package ru.ivmiit.projectFixCource.dao;
 
 public interface AbstractDao<T> {
     void save(T model);

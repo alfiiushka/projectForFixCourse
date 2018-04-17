@@ -1,8 +1,9 @@
-package ru.ivmiit.alfia.dao;
+package ru.ivmiit.projectFixCource.dao;
 
-import ru.ivmiit.alfia.config.DaoConfig;
-import ru.ivmiit.alfia.model.StoreUser;
-import ru.ivmiit.alfia.security.SecurityService;
+import ru.ivmiit.projectFixCource.config.DaoConfig;
+import ru.ivmiit.projectFixCource.model.StoreUser;
+import ru.ivmiit.projectFixCource.security.SecurityService;
+import ru.ivmiit.projectFixCource.security.SecurityServiceImpl;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -12,7 +13,13 @@ import java.sql.SQLException;
 
 public class StoreUserDaoJDBCImpl implements StoreUserDao {
 
-    private DaoConfig daoConfig = new DaoConfig();
+    private DaoConfig daoConfig;
+    private SecurityService securityService;
+
+    public StoreUserDaoJDBCImpl() {
+        this.daoConfig = new DaoConfig();
+        this.securityService = new SecurityServiceImpl();
+    }
 
     @Override
     public void save(StoreUser user) {
@@ -32,7 +39,7 @@ public class StoreUserDaoJDBCImpl implements StoreUserDao {
     @Override
     public boolean isExist(String login, String password) {
         StoreUser user = findbylogin(login);
-        return user != null && SecurityService.checkPassword(password, user.getPassword());
+        return user != null && securityService.checkPassword(password, user.getPassword());
     }
 
     @Override

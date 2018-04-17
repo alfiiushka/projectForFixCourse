@@ -1,4 +1,4 @@
-package ru.ivmiit.alfia.model;
+package ru.ivmiit.projectFixCource.model;
 
 import javax.persistence.*;
 
