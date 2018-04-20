@@ -1,14 +1,14 @@
-package ru.ivmiit.projectFixCource.dao;
+package ru.ivmiit.projectFixCourse.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.transaction.annotation.Transactional;
-import ru.ivmiit.projectFixCource.config.DaoConfig;
-import ru.ivmiit.projectFixCource.model.StoreUser;
-import ru.ivmiit.projectFixCource.security.SecurityService;
-import ru.ivmiit.projectFixCource.security.SecurityServiceImpl;
+import ru.ivmiit.projectFixCourse.config.DaoConfig;
+import ru.ivmiit.projectFixCourse.model.StoreUser;
+import ru.ivmiit.projectFixCourse.security.SecurityService;
+import ru.ivmiit.projectFixCourse.security.SecurityServiceImpl;
 
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaBuilder;

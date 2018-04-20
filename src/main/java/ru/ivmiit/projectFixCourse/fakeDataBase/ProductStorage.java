@@ -1,6 +1,6 @@
-package ru.ivmiit.projectFixCource.fakeDataBase;
+package ru.ivmiit.projectFixCourse.fakeDataBase;
 
-import ru.ivmiit.projectFixCource.model.Product;
+import ru.ivmiit.projectFixCourse.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;

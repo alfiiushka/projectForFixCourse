@@ -1,7 +1,7 @@
-package ru.ivmiit.projectFixCource.servlets;
+package ru.ivmiit.projectFixCourse.servlets;
 
-import ru.ivmiit.projectFixCource.model.Product;
-import ru.ivmiit.projectFixCource.dao.ProductDao;
+import ru.ivmiit.projectFixCourse.model.Product;
+import ru.ivmiit.projectFixCourse.dao.ProductDao;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

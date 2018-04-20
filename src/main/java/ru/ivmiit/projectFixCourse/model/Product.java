@@ -1,4 +1,4 @@
-package ru.ivmiit.projectFixCource.model;
+package ru.ivmiit.projectFixCourse.model;
 
 public class Product {
     private String name;

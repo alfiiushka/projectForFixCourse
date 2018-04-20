@@ -1,8 +1,8 @@
-package ru.ivmiit.projectFixCource.servlets;
+package ru.ivmiit.projectFixCourse.servlets;
 
-import ru.ivmiit.projectFixCource.model.StoreUser;
-import ru.ivmiit.projectFixCource.dao.StoreUserDao;
-import ru.ivmiit.projectFixCource.security.SecurityService;
+import ru.ivmiit.projectFixCourse.model.StoreUser;
+import ru.ivmiit.projectFixCourse.dao.StoreUserDao;
+import ru.ivmiit.projectFixCourse.security.SecurityService;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

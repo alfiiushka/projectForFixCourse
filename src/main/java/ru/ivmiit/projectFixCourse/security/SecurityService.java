@@ -1,4 +1,4 @@
-package ru.ivmiit.projectFixCource.security;
+package ru.ivmiit.projectFixCourse.security;
 
 public interface SecurityService {
 

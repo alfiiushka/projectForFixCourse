@@ -1,6 +1,6 @@
-package ru.ivmiit.projectFixCource.dao;
+package ru.ivmiit.projectFixCourse.dao;
 
-import ru.ivmiit.projectFixCource.model.StoreUser;
+import ru.ivmiit.projectFixCourse.model.StoreUser;
 
 public interface StoreUserDao extends AbstractDao<StoreUser> {
 

@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="ru.ivmiit.projectFixCource.model.Product" %>
+<%@ page import="ru.ivmiit.projectFixCourse.model.Product" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="Cp1251"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>

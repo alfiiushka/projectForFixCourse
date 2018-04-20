@@ -1,7 +1,7 @@
-package ru.ivmiit.projectFixCource.dao;
+package ru.ivmiit.projectFixCourse.dao;
 
-import ru.ivmiit.projectFixCource.fakeDataBase.ProductStorage;
-import ru.ivmiit.projectFixCource.model.Product;
+import ru.ivmiit.projectFixCourse.fakeDataBase.ProductStorage;
+import ru.ivmiit.projectFixCourse.model.Product;
 
 import java.util.List;
 

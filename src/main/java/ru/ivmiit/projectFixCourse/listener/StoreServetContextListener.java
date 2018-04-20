@@ -1,11 +1,11 @@
-package ru.ivmiit.projectFixCource.listener;
+package ru.ivmiit.projectFixCourse.listener;
 
-import ru.ivmiit.projectFixCource.dao.ProductDao;
-import ru.ivmiit.projectFixCource.dao.ProductDaoJdbcTemplateImpl;
-import ru.ivmiit.projectFixCource.dao.StoreUserDao;
-import ru.ivmiit.projectFixCource.dao.StoreUserDaoJDBCImpl;
-import ru.ivmiit.projectFixCource.security.SecurityService;
-import ru.ivmiit.projectFixCource.security.SecurityServiceImpl;
+import ru.ivmiit.projectFixCourse.dao.ProductDao;
+import ru.ivmiit.projectFixCourse.dao.ProductDaoJdbcTemplateImpl;
+import ru.ivmiit.projectFixCourse.dao.StoreUserDao;
+import ru.ivmiit.projectFixCourse.dao.StoreUserDaoJDBCImpl;
+import ru.ivmiit.projectFixCourse.security.SecurityService;
+import ru.ivmiit.projectFixCourse.security.SecurityServiceImpl;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;

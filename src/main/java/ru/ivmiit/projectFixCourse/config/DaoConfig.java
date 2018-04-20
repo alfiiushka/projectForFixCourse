@@ -1,8 +1,8 @@
-package ru.ivmiit.projectFixCource.config;
+package ru.ivmiit.projectFixCourse.config;
 
 import org.hibernate.cfg.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import ru.ivmiit.projectFixCource.model.StoreUser;
+import ru.ivmiit.projectFixCourse.model.StoreUser;
 
 import javax.sql.DataSource;
 import java.io.IOException;
